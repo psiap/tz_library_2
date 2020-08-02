@@ -21,8 +21,8 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
             cursorclass=DictCursor
         )
         super().__init__()
-        self.setupUi(self)  # Это нужно для инициализации нашего дизайна
-        self.table.setColumnCount(3)  # Устанавливаем три колонки
+        self.setupUi(self)
+        self.table.setColumnCount(3) 
         self.label.setText("")
         self.table.setHorizontalHeaderLabels(["id", "Имя", "Номер"])
         self.reading_text()
@@ -73,7 +73,7 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
                 self.table.setItem(self.table.rowCount() -1 , 0, QTableWidgetItem(str(row['id'])))
                 self.table.setItem(self.table.rowCount() -1 , 1, QTableWidgetItem(row['name']))
                 self.table.setItem(self.table.rowCount() -1 , 2, QTableWidgetItem(str(row['number'])))
-                self.table.setRowCount(self.table.rowCount() + 1)  # и одну строку в таблице
+                self.table.setRowCount(self.table.rowCount() + 1) 
         self.table.resizeColumnsToContents()
         print(self.table.rowCount())
 
@@ -168,11 +168,10 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
 
 def main():
 
-    app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
-    window = ExampleApp()  # Создаём объект класса ExampleApp
-    window.show()  # Показываем окно
-    app.exec_()  # и запускаем приложение
+    app = QtWidgets.QApplication(sys.argv) 
+    window = ExampleApp() 
+    window.show() 
+    app.exec_() 
 
-if __name__ == '__main__':  # Если мы запускаем файл напрямую, а не импортируем
-    main()  # то запускаем функцию main()
-
+if __name__ == '__main__':
+    main() 
